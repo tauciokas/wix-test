@@ -90880,19 +90880,24 @@ var CategoryTree = (function () {
             .subscribe(function (res) {
             // store tree data
             _this.categoryTree = res ? res : [];
-            _this.reversedCategoryTree = res ? res.reverse() : [];
+            _this.reversedCategoryTree = _this.traverseObject(_this.categoryTree);
         }, function (err) {
             console.log(err);
         });
     };
-    // traverse object
+    // traverse object (not working)
     CategoryTree.prototype.traverseObject = function (element) {
         var newElement = [];
         // loop through the element
-        for (var i = 0; i <= element.length; i++) {
-            console.log(i);
-            // using unshift store elements at the beginning of the array
-        }
+        element.forEach(function (item, index) {
+            newElement.unshift(item);
+            // if item has children
+            if (item.children.length >= 1) {
+                // call same function again
+                // this.traverseObject(item.children);
+                console.log(item);
+            }
+        });
     };
     return CategoryTree;
 }());
