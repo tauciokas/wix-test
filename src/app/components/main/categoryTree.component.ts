@@ -31,13 +31,13 @@ export class CategoryTree {
         let newElement = [];
 
         // loop through the element
-        element.forEach(function(item, index) {
+        element.forEach(function(item: any, index: number) {
             newElement.unshift(item);
 
             // if item has children
             if(item.children.length >= 1) {
                 // call same function again
-                this.traverseObject(item.children);
+                // this.traverseObject(item.children);
                 console.log(item);
             }
         });
