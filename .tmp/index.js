@@ -90885,6 +90885,15 @@ var CategoryTree = (function () {
             console.log(err);
         });
     };
+    // traverse object
+    CategoryTree.prototype.traverseObject = function (element) {
+        var newElement = [];
+        // loop through the element
+        for (var i = 0; i <= element.length; i++) {
+            console.log(i);
+            // using unshift store elements at the beginning of the array
+        }
+    };
     return CategoryTree;
 }());
 CategoryTree = __decorate([
